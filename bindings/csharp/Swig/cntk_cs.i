@@ -50,125 +50,126 @@
 // Ignore things in CNTKLibrary.h that are not exposed for C# Eval.
 %ignore CNTK::NDShape::NDShape(const std::initializer_list<size_t>& dimensions);
 
-%ignore CNTK::Internal::GenerateUid;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::GenerateUid;
 
-%ignore CNTK::PlaceholderVariable;
-%ignore CNTK::InputVariable;
-%ignore CNTK::OutputVariable;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::PlaceholderVariable;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::InputVariable;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::OutputVariable;
 
-%ignore CNTK::Variable::CompositeFunction;
-%ignore CNTK::Variable::Trainer;
-%ignore CNTK::Varaiable::PrimitiveFunction;
-
-%ignore CNTK::ConstantInitializer;
-%ignore CNTK::UniformInitializer;
-%ignore CNTK::NormalInitializer;
-%ignore CNTK::XavierInitializer;
-%ignore CNTK::GlorotUniformInitializer;
-%ignore CNTK::GlorotNormalInitializer;
-%ignore CNTK::HeUniformInitializer;
-%ignore CNTK::HeNormalInitializer;
-%ignore CNTK::BilinearInitializer;
-%ignore CNTK::RandomInitializerWithRank;
+%rename("$ignore", %$isclass, fullname=1) CNTK::Variable::CompositeFunction;
+%rename("$ignore", %$isclass, fullname=1) CNTK::Variable::Trainer;
+%rename("$ignore", %$isclass, fullname=1) CNTK::Varaiable::PrimitiveFunction;
 
 %ignore CNTK::IDictionarySerializable;
 %ignore CNTK::DictionaryValue;
 %ignore CNTK::Dictionary;
 %ignore CNTK::ParameterInitializer;
 
+%rename("$ignore") CNTK::ConstantInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::UniformInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::NormalInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::XavierInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::GlorotUniformInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::GlorotNormalInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::HeUniformInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::HeNormalInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::BilinearInitializer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::RandomInitializerWithRank;
+
 %ignore std::hash<::CNTK::Parameter>;
 %ignore CNTK::hash<::CNTK::Constant>;
 
-%ignore CNTK::Value::UnpackVariableValue;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Value::UnpackVariableValue;
 
-%ignore CNTK::Function::CompositeFunction;
-%ignore CNTK::Function::Trainer;
-%ignore CNTK::Function::Backward;
-%ignore CNTK::Function::Forward;
-%ignore CNTK::Function::Serialize;
-%ignore CNTK::Function::Deserialize;
-%ignore CNTK::Function::Parameters;
-%ignore CNTK::Function::Constants;
-%ignore CNTK::Function::Placeholders;
-%ignore CNTK::Function::Attributes;
-%ignore CNTK::Function::PrintGraph;
-%ignore CNTK::Function::BlockArgumentsMapping;
-%ignore CNTK::Function::ReplacePlaceholders;
-%ignore CNTK::Function::ReplacePlaceholder;
-%ignore CNTK::Function::Function;
-%ignore CNTK::Function::RestoreFromCheckpoint;
+%rename("$ignore", %$isclass, fullname=1) CNTK::Function::CompositeFunction;
+%rename("$ignore", %$isclass, fullname=1) CNTK::Function::Trainer;
+
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Backward;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Forward;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Serialize;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Deserialize;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Parameters;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Constants;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Placeholders;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Attributes;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::PrintGraph;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::BlockArgumentsMapping;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::ReplacePlaceholders;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::ReplacePlaceholder;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::Function;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Function::RestoreFromCheckpoint;
 
 %ignore CNTK::Parameter;
 %ignore CNTK::Constant;
 %ignore CNTK::BackPropState;
 %ignore CNTK::PoolingType;
 
-%ignore CNTK::Negate;
-%ignore CNTK::operator-;
-%ignore CNTK::Sigmoid;
-%ignore CNTK::Tanh;
-%ignore CNTK::Sin;
-%ignore CNTK::Cos;
-%ignore CNTK::ReLU;
-%ignore CNTK::Exp;
-%ignore CNTK::Log;
-%ignore CNTK::Square;
-%ignore CNTK::Sqrt;
-%ignore CNTK::Round;
-%ignore CNTK::Floor;
-%ignore CNTK::Ceil;
-%ignore CNTK::Abs;
-%ignore CNTK::Reciprocal;
-%ignore CNTK::Softmax;
-%ignore CNTK::Hardmax;
-%ignore CNTK::TransposeAxes;
-%ignore CNTK::Transpose;
-%ignore CNTK::Slice;
-%ignore CNTK::RandomSample;
-%ignore CNTK::RandomSampleInclusionFrequency;
-%ignore CNTK::Dropout;
-%ignore CNTK::Reshape;
-%ignore CNTK::Plus;
-%ignore CNTK::operator+;
-%ignore CNTK::Minus;
-%ignore CNTK::operator-;
-%ignore CNTK::LogAddExp;
-%ignore CNTK::ElementTimes;
-%ignore CNTK::ElementDivide;
-%ignore CNTK::Equal;
-%ignore CNTK::NotEqual;
-%ignore CNTK::Less;
-%ignore CNTK::LessEqual;
-%ignore CNTK::Greater;
-%ignore CNTK::GreaterEqual;
-%ignore CNTK::Times;
-%ignore CNTK::TransposeTimes;
-%ignore CNTK::CosineDistance;
-%ignore CNTK::BinaryCrossEntropy;
-%ignore CNTK::WeightedBinaryCrossEntropy;
-%ignore CNTK::SquaredError;
-%ignore CNTK::CrossEntropyWithSoftmax;
-%ignore CNTK::ClassificationError;
-%ignore CNTK::PastValue;
-%ignore CNTK::FutureValue;
-%ignore CNTK::ReduceSum;
-%ignore CNTK::ReduceLogSum;
-%ignore CNTK::ReduceMean;
-%ignore CNTK::ReduceMax;
-%ignore CNTK::ReduceMin;
-%ignore CNTK::PerDimMeanVarianceNormalize;
-%ignore CNTK::Convolution;
-%ignore CNTK::ROIPooling;
-%ignore CNTK::Pooling;
-%ignore CNTK::Unpooling; 
-%ignore CNTK::LambdaRank;
-%ignore CNTK::NDCGAt1;
-%ignore CNTK::BatchNormalization;
-%ignore CNTK::OptimizedRNNStack;
-%ignore CNTK::Clip;
-%ignore CNTK::ElementSelect;
-%ignore CNTK::Splice;
-%ignore CNTK::AsBlock;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Negate;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::operator-;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Sigmoid;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Tanh;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Sin;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Cos;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReLU;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Exp;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Log;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Square;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Sqrt;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Round;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Floor;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Ceil;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Abs;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Reciprocal;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Softmax;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Hardmax;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::TransposeAxes;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Transpose;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Slice;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::RandomSample;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::RandomSampleInclusionFrequency;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Dropout;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Reshape;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Plus;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::operator+;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Minus;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::operator-;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::LogAddExp;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ElementTimes;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ElementDivide;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Equal;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::NotEqual;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Less;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::LessEqual;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Greater;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::GreaterEqual;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Times;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::TransposeTimes;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CosineDistance;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::BinaryCrossEntropy;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::WeightedBinaryCrossEntropy;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::SquaredError;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CrossEntropyWithSoftmax;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ClassificationError;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::PastValue;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::FutureValue;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReduceSum;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReduceLogSum;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReduceMean;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReduceMax;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ReduceMin;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::PerDimMeanVarianceNormalize;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Convolution;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ROIPooling;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Pooling;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Unpooling; 
+%rename("$ignore", %$isfunction, fullname=1) CNTK::LambdaRank;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::NDCGAt1;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::BatchNormalization;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::OptimizedRNNStack;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Clip;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::ElementSelect;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Splice;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::AsBlock;
 
 %ignore CNTK::Sequence;
 
@@ -183,42 +184,44 @@
 %ignore CNTK::AdditionalLearningOptions;
 %ignore CNTK::Learner;
 
-%ignore CNTK::SGDLearner;
-%ignore CNTK::MomentumSGDLearner;
-%ignore CNTK::NesterovLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::SGDLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::MomentumSGDLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::NesterovLearner;
+
 %ignore CNTK::DefaultVarianceMomentum;
-%ignore CNTK::AdamLearner;
-%ignore CNTK::AdaGradLearner;
-%ignore CNTK::RMSPropLearner;
+
+%rename("$ignore", %$isfunction, fullname=1) CNTK::AdamLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::AdaGradLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::RMSPropLearner;
 
 %ignore CNTK::DistributedLearner;
-%ignore CNTK::CreateDataParallelDistributedLearner;
-%ignore CNTK::CreateQuantizedDataParallelDistributedLearner;
-%ignore CNTK::CreateBlockMomentumDistributedLearner;
+
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateDataParallelDistributedLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateQuantizedDataParallelDistributedLearner;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateBlockMomentumDistributedLearner;
 
 %ignore CNTK::Trainer;
-%ignore CNTK::CreateTrainer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateTrainer;
 %ignore CNTK::StreamInformation;
 %ignore std::hash<::CNTK::StreamInformation>;
 
 %ignore CNTK::MinibatchData;
 %ignore CNTK::MinibatchSource;
-%ignore CNTK::CreateCompositeMinibatchSource;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateCompositeMinibatchSource;
 %ignore CNTK::StreamConfiguration;
 %ignore CNTK::TextFormatMinibatchSource;
 %ignore CNTK::ComputeInputPerDimMeansAndInvStdDevs;
 %ignore CNTK::DistributedWorkerDescriptor;
 %ignore CNTK::DistributedCommunicator;
 %ignore CNTK::QuantizedDistributedCommunicator;
-%ignore CNTK::MPICommunicator;
-%ignore CNTK::QuantizedMPICommunicator;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::MPICommunicator;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::QuantizedMPICommunicator;
 %ignore CNTK::MinibatchInfo;
 %ignore CNTK::DistributedTrainer;
 %ignore CNTK::TrainingSession;
-%ignore CNTK::CreateBasicTrainingSession;
-%ignore CNTK::Create;
-%ignore CNTK::CreateDataParallelDistributedTrainer;
-%ignore CNTK::CreateQuantizedDataParallelDistributedTrainer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateBasicTrainingSession;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateDataParallelDistributedTrainer;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::CreateQuantizedDataParallelDistributedTrainer;
 %ignore CNTK::CreateBlockMomentumDistributedTrainer;
 
 %ignore std::hash<::CNTK::DistributedWorkerDescriptor>;
@@ -229,71 +232,54 @@
 // Ignore things in CNTKLibraryInternals.h that are not exposed for C# Eval.
 %ignore CNTK::Internal::PrimitiveFunction;
 %ignore CNTK::Internal::CompositeFunction;
-%ignore CNTK::Internal::MaxNumCPUThreadsSet;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::MaxNumCPUThreadsSet;
 %ignore CNTK::PrimitiveOpType;
-%ignore CNTK::Internal::IsWithin;
-%ignore CNTK::Internal::PackedIndex;
-%ignore CNTK::Internal::GatherPacked;
-%ignore CNTK::Internal::ScatterPacked;
-%ignore CNTK::Internal::ZeroesWithDynamicAxesLike;
-%ignore CNTK::Internal::Where;
-%ignore CNTK::Internal::Gather;
-%ignore CNTK::Internal::Scatter;
-%ignore CNTK::Internal::Slice;
-%ignore CNTK::Internal::ReduceElements;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::IsWithin;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::PackedIndex;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::GatherPacked;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::ScatterPacked;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::ZeroesWithDynamicAxesLike;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::Where;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::Gather;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::Scatter;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::Slice;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::ReduceElements;
 
-%ignore CNTK::Internal::EnableReversingTensorShapesInErrorMessages;
-%ignore CNTK::Internal::IsReversingTensorShapesInErrorMessagesEnabled;
-%ignore CNTK::Internal::AlwaysAllowSettingDefaultDevice;
-%ignore CNTK::Internal::IsSettingDefaultDeviceAlwaysAllowed;
-%ignore CNTK::Internal::AllowRenamingFunctions;
-%ignore CNTK::Internal::IsRenamingFunctionsAllowed;
-%ignore CNTK::Internal::SetAutomaticUnpackingOfPackedValues;
-%ignore CNTK::Internal::IsAutomaticUnpackingOfPackedValuesDisabled;
-%ignore CNTK::Internal::SetComputationNetworkTraceLevel;
-%ignore CNTK::Internal::GetComputationNetworkTraceLevel;
-%ignore CNTK::Internal::SetGPUMemoryAllocationTraceLevel;
-%ignore CNTK::Internal::ForceSynchronousCUDAKernelExecutions;
-%ignore CNTK::Internal::ForceDeterministicAlgorithms;
-%ignore CNTK::Internal::SetFixedRandomSeed;
-%ignore CNTK::Internal::EnableForwardValuesSharing;
-%ignore CNTK::Internal::DisableForwardValuesSharing;
-%ignore CNTK::Internal::EnableHyperMemoryCompress;
-%ignore CNTK::Internal::DisableHyperMemoryCompress;
-%ignore CNTK::Internal::AreEquivalent;
-%ignore CNTK::Internal::AreEqual;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::EnableReversingTensorShapesInErrorMessages;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::IsReversingTensorShapesInErrorMessagesEnabled;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::AlwaysAllowSettingDefaultDevice;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::IsSettingDefaultDeviceAlwaysAllowed;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::AllowRenamingFunctions;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::IsRenamingFunctionsAllowed;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::SetAutomaticUnpackingOfPackedValues;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::IsAutomaticUnpackingOfPackedValuesDisabled;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::SetComputationNetworkTraceLevel;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::GetComputationNetworkTraceLevel;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::SetGPUMemoryAllocationTraceLevel;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::ForceSynchronousCUDAKernelExecutions;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::ForceDeterministicAlgorithms;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::SetFixedRandomSeed;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::EnableForwardValuesSharing;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::DisableForwardValuesSharing;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::EnableHyperMemoryCompress;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::DisableHyperMemoryCompress;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::AreEquivalent;
+%rename("$ignore", %$isfunction, fullname=1) CNTK::Internal::AreEqual;
 
 // map the pointer to array
 %apply float INPUT[]  { float *dataBuffer }
 %apply double INPUT[]  { double *dataBuffer }
 
 %exception {
-    try {
-        $action
-    }
-    catch (Swig::DirectorException &e) 
-    { 
-        SWIG_exception(SWIG_RuntimeError,e.what()); 
-    }
-
+    try { $action }
+    catch (const Swig::DirectorException &e) { SWIG_exception(SWIG_RuntimeError,e.what()); }
     // TODO: print out C++ call stack trace info.
     // It is currently not available as a part of exception message.
-    catch (std::runtime_error &e)
-    {
-        SWIG_exception(SWIG_RuntimeError,e.what()); 
-    }
-    catch (std::invalid_argument &e) 
-    { 
-        SWIG_exception(SWIG_ValueError,e.what()); 
-    }
-    catch (std::logic_error &e) 
-    { 
-        SWIG_exception(SWIG_RuntimeError,e.what()); 
-    }
-    catch (...) 
-    { 
-        SWIG_exception(SWIG_UnknownError,"Unknown runtime exception"); 
-    }
+    catch (const std::runtime_error &e) { SWIG_exception(SWIG_RuntimeError,e.what()); }
+    catch (const std::invalid_argument &e) { SWIG_exception(SWIG_ValueError,e.what()); }
+    catch (const std::logic_error &e) { SWIG_exception(SWIG_RuntimeError,e.what()); }
+    catch (const std::exception &e) { SWIG_exception(SWIG_RuntimeError, e.what()); }
+    catch (...) { SWIG_exception(SWIG_UnknownError,"Unknown runtime exception"); }
 }
 
 %rename (GetAllDevices) CNTK::DeviceDescriptor::AllDevices;
