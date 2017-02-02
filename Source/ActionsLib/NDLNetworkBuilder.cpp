@@ -540,17 +540,20 @@ void NDLNodeEvaluatorImpl<ElemType>::Evaluate(NDLNode<ElemType>* node, const wst
 
             nodePtr = builder.BatchNormalization(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, spatial, normTimeConst, blendTimeConst, epsilon, useCntkEngine, imageLayoutKind, name);
 
-            // Patch up NDL network config by creating and injecting an additional input parameter for
-            // BatchNormalizationNode
-            ComputationNodePtr runSampleCount = builder.CreateLearnableParameter(name + L".run_sample_count", TensorShape(1));
-            runSampleCount->SetLearningRateMultiplier(0);
-            m_net->InitLearnableParameters(runSampleCount, L"fixedValue", 0);
-            
-            NDLNode<ElemType>* runCountNode = new NDLNode<ElemType>("runCount", ConfigValue("0"), node->GetParentScript(), ndlTypeConstant);
+            if (parameter.size() == 5) 
+            {
+                // Patch up NDL network config by creating and injecting an additional input parameter for
+                // BatchNormalizationNode
+                ComputationNodePtr runSampleCount = builder.CreateLearnableParameter(name + L".run_sample_count", TensorShape(1));
+                runSampleCount->SetLearningRateMultiplier(0);
+                m_net->InitLearnableParameters(runSampleCount, L"fixedValue", 0);
 
-            runCountNode->SetEvalValue(runSampleCount.get());
+                NDLNode<ElemType>* runCountNode = new NDLNode<ElemType>("runCount", ConfigValue("0"), node->GetParentScript(), ndlTypeConstant);
 
-            node->InsertParam(runCountNode);
+                runCountNode->SetEvalValue(runSampleCount.get());
+
+                node->InsertParam(runCountNode);
+            }
         }
     }
     else if (cnNodeType == OperationNameOf(CropNode))

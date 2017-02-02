@@ -24,7 +24,17 @@ BOOST_FIXTURE_TEST_SUITE(BatchNormTestSuite, Fixture)
 BOOST_AUTO_TEST_CASE(TestLoadingNetworkFromLegacyNDLConfig)
 {
     ConfigParameters config;
-    config.LoadConfigFile(L"../Config/BatchNorm_NDL_Builder.cntk");
+    config.LoadConfigFile(L"../Config/BatchNorm_NDL_Builder_BN5.cntk");
+    vector<wstring> ignored;
+    ComputationNetworkPtr net;
+    BOOST_CHECK_NO_THROW((net = GetModelFromConfig<ConfigParameters, float>(config, L"", ignored)));
+    BOOST_CHECK(net != nullptr);
+};
+
+BOOST_AUTO_TEST_CASE(TestLoadingNetworkFromUpdatedNDLConfig)
+{
+    ConfigParameters config;
+    config.LoadConfigFile(L"../Config/BatchNorm_NDL_Builder_BN6.cntk");
     vector<wstring> ignored;
     ComputationNetworkPtr net;
     BOOST_CHECK_NO_THROW((net = GetModelFromConfig<ConfigParameters, float>(config, L"", ignored)));

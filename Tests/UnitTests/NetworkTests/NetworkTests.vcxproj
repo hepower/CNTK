@@ -129,11 +129,12 @@
   <ItemGroup>
     <None Include="Config\BatchNorm_BS_Builder.cntk" />
     <None Include="Config\BatchNorm_BS_Model.cntk" />
-    <None Include="Config\BatchNorm_NDL_Builder.cntk" />
+    <None Include="Config\BatchNorm_NDL_Builder_BN5.cntk" />
+    <None Include="Config\BatchNorm_NDL_Builder_BN6.cntk" />
     <None Include="Config\BatchNorm_NDL_Model.cntk" />
     <None Include="Config\Macros.bs" />
-    <None Include="Models\01_OneHidden.bin" />
-    <None Include="Models\ResNet20_CIFAR10_DataAug.bin" />
+    <None Include="Models\01_OneHidden.dnn" />
+    <None Include="Models\ResNet20_CIFAR10_DataAug.dnn" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Target Name="Build" Condition="$(HasBoost)" Outputs="$(TargetPath)" DependsOnTargets="$(BuildDependsOn)" />

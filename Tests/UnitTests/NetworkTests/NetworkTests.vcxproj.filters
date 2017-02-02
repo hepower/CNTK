@@ -55,12 +55,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config\BatchNorm_NDL_Builder.cntk">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="Config\BatchNorm_NDL_Model.cntk">
-      <Filter>Config</Filter>
-    </None>
     <None Include="Config\BatchNorm_BS_Builder.cntk">
       <Filter>Config</Filter>
     </None>
@@ -70,10 +64,19 @@
     <None Include="Config\BatchNorm_BS_Model.cntk">
       <Filter>Config</Filter>
     </None>
-    <None Include="Models\01_OneHidden.bin">
+    <None Include="Config\BatchNorm_NDL_Model.cntk">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="Config\BatchNorm_NDL_Builder_BN5.cntk">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="Config\BatchNorm_NDL_Builder_BN6.cntk">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="Models\01_OneHidden.dnn">
       <Filter>Models</Filter>
     </None>
-    <None Include="Models\ResNet20_CIFAR10_DataAug.bin">
+    <None Include="Models\ResNet20_CIFAR10_DataAug.dnn">
       <Filter>Models</Filter>
     </None>
   </ItemGroup>

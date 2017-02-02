@@ -1,7 +1,5 @@
 rootDir = ".."
 
-deviceId = 0
-
 precision = "float"
 
 batchNormalizationEngine = "cntk"

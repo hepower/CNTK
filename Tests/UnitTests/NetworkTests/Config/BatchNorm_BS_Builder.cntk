@@ -1,6 +1,5 @@
 rootDir = ".."
 configDir = "$rootDir$/Config"
-deviceId = 0
 precision = "float"
 
 BrainScriptNetworkBuilder = {
